@@ -1,0 +1,57 @@
+import{c as m,r as s,j as e,S as H,G as R}from"./index-Cszak3U1.js";import{G as V}from"./index-Cyre3K_c.js";import{C as W,R as Z}from"./refresh-cw-CIq9Jx0E.js";import{I as X}from"./info-DyFGagoy.js";/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const ee=[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"m9 12 2 2 4-4",key:"dzmm74"}]],te=m("circle-check",ee);/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const se=[["circle",{cx:"12",cy:"12",r:"10",key:"1mglay"}],["path",{d:"m15 9-6 6",key:"1uzhvr"}],["path",{d:"m9 9 6 6",key:"z0biqf"}]],ne=m("circle-x",se);/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const re=[["path",{d:"M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15",key:"143lza"}],["path",{d:"M11 12 5.12 2.2",key:"qhuxz6"}],["path",{d:"m13 12 5.88-9.8",key:"hbye0f"}],["path",{d:"M8 7h8",key:"i86dvs"}],["circle",{cx:"12",cy:"17",r:"5",key:"qbz8iq"}],["path",{d:"M12 18v-2h-.5",key:"fawc4q"}]],ie=m("medal",re);/**
+ * @license lucide-react v0.484.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const le=[["path",{d:"M6 9H4.5a2.5 2.5 0 0 1 0-5H6",key:"17hqa7"}],["path",{d:"M18 9h1.5a2.5 2.5 0 0 0 0-5H18",key:"lmptdp"}],["path",{d:"M4 22h16",key:"57wxv0"}],["path",{d:"M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22",key:"1nw9bq"}],["path",{d:"M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22",key:"1np0yb"}],["path",{d:"M18 2H6v7a6 6 0 0 0 12 0V2Z",key:"u46fv3"}]],ae=m("trophy",le),C="AIzaSyBUpkr7y-nrr8ODoZ4LKjttWDeLSfBhSYw",oe="gemini-1.5-flash",me=()=>{const[ce,P]=s.useState(null),[o,Y]=s.useState(null),[l,p]=s.useState(null),[h,A]=s.useState(!1),[z,g]=s.useState(null),[$,k]=s.useState(!1),[t,f]=s.useState([]),[i,G]=s.useState(0),[a,b]=s.useState(null),[x,q]=s.useState(0),[D,E]=s.useState(!1),[u,M]=s.useState(15),[Q,y]=s.useState(!1),[T,_]=s.useState(0),[K,j]=s.useState(!0);s.useEffect(()=>{(async()=>{try{const r=new V(C),d=await r.getGenerativeModel({model:oe});P(r),Y(d)}catch(r){console.error("Gemini AI Initialization Error:",r),g(r.message||"Failed to initialize AI service.")}})()},[]),s.useEffect(()=>{o&&(async()=>{if(o)try{j(!0);let c=(await(await o.generateContent(`Generate 5 multiple choice questions about Indian culture with these requirements:
+        
+        1. Each question should have 4 options with 1 correct answer
+        2. Include these fields for each question:
+           - question: The question text
+           - options: Array of 4 options
+           - correctAnswer: The correct option
+           - explanation: Brief explanation of the answer
+           - difficulty: Easy/Medium/Hard
+           - category: Arts/Geography/Cuisine/Literature/History
+           - region: Specific region or Pan-India
+        
+        3. Questions should cover diverse aspects of Indian culture
+        4. Format as a valid JSON array with exactly 5 questions
+        
+        Example format:
+        [
+          {
+            "question": "...",
+            "options": ["...", "...", "...", "..."],
+            "correctAnswer": "...",
+            "explanation": "...",
+            "difficulty": "...",
+            "category": "...",
+            "region": "..."
+          }
+        ]`)).response).text();const v=c.indexOf("["),w=c.lastIndexOf("]")+1,S=c.slice(v,w),I=JSON.parse(S);f(I)}catch(r){console.error("Quiz Generation Error:",r),f([{question:"Which classical dance form originated in Tamil Nadu?",options:["Kathak","Bharatanatyam","Manipuri","Odissi"],correctAnswer:"Bharatanatyam",explanation:"Bharatanatyam originated in Tamil Nadu temples.",difficulty:"Medium",category:"Arts",region:"Tamil Nadu"},{question:"Which river is considered sacred in Hinduism?",options:["Yamuna","Godavari","Ganges","Brahmaputra"],correctAnswer:"Ganges",explanation:"The Ganges is revered as a goddess in Hinduism.",difficulty:"Easy",category:"Geography",region:"North India"}])}finally{j(!1)}})()},[o]);const U=s.useCallback(async n=>{if(o){A(!0),p(null),g(null);try{const r=`Provide a cultural insight about: "${n}"
+      
+      Structure your response as:
+      {
+        "historicalContext": "...",
+        "culturalSignificance": "...",
+        "personalStory": "..."
+      }`;let c=(await(await o.generateContent(r)).response).text();const v=c.indexOf("{"),w=c.lastIndexOf("}")+1,S=c.slice(v,w),I=JSON.parse(S);p(I)}catch(r){console.error("AI Insight Error:",r),g("Couldn't generate insight. Please try again."),p({historicalContext:"Interesting historical context about this topic",culturalSignificance:"This holds cultural significance in India",personalStory:"There's a fascinating story related to this"})}finally{A(!1)}}},[o]);s.useEffect(()=>{let n;return Q&&u>0?n=setInterval(()=>{M(r=>r-1)},1e3):u===0&&L(null),()=>clearInterval(n)},[Q,u]),s.useEffect(()=>{t.length>0&&(M(15),y(!0),_(15),b(null),p(null),k(!1))},[i,t]);const L=s.useCallback(n=>{var r;if(a===null&&(y(!1),b(n||"No answer"),k(!0),n===((r=t[i])==null?void 0:r.correctAnswer))){const d=Math.max(0,u);q(N=>N+1+Math.floor(d/3)),_(d)}},[a,i,t,u]),F=s.useCallback(()=>{i<t.length-1?G(n=>n+1):E(!0)},[i,t.length]),B=()=>{G(0),b(null),q(0),E(!1),y(!0),f([]),j(!0)},O=()=>{const n=t.length>0?x/t.length*100:0;return n===100?{title:"Cultural Grandmaster",icon:e.jsx(ie,{className:"text-gold-500"})}:n>=80?{title:"Cultural Connoisseur",icon:e.jsx(ae,{className:"text-yellow-500"})}:n>=60?{title:"Cultural Expert",icon:e.jsx(H,{className:"text-purple-500"})}:n>=40?{title:"Cultural Explorer",icon:e.jsx(R,{className:"text-blue-500"})}:{title:"Cultural Novice",icon:e.jsx(X,{className:"text-gray-500"})}},J=()=>!a||!l?null:h?e.jsx("div",{className:"bg-purple-100 p-4 rounded-lg mb-4 text-center animate-pulse",children:e.jsx("p",{className:"text-purple-700",children:"Loading cultural insight..."})}):z?e.jsx("div",{className:"bg-red-50 p-4 rounded-lg mb-4 text-red-600",children:e.jsx("p",{children:z})}):e.jsxs("div",{className:"bg-purple-50 p-4 rounded-lg mb-4",children:[e.jsx("h4",{className:"font-bold text-purple-800 mb-2",children:"Cultural Insight"}),e.jsxs("div",{className:"space-y-3",children:[e.jsxs("div",{children:[e.jsx("h5",{className:"text-sm font-semibold text-purple-700",children:"Historical Context"}),e.jsx("p",{className:"text-sm text-purple-600",children:l==null?void 0:l.historicalContext})]}),e.jsxs("div",{children:[e.jsx("h5",{className:"text-sm font-semibold text-purple-700",children:"Cultural Significance"}),e.jsx("p",{className:"text-sm text-purple-600",children:l==null?void 0:l.culturalSignificance})]}),e.jsxs("div",{children:[e.jsx("h5",{className:"text-sm font-semibold text-purple-700",children:"Story/Legend"}),e.jsx("p",{className:"text-sm text-purple-600 italic",children:l==null?void 0:l.personalStory})]})]})]});return K?e.jsx("div",{className:"min-h-screen flex items-center justify-center",children:e.jsxs("div",{className:"text-center",children:[e.jsx("div",{className:"animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500 mx-auto mb-4"}),e.jsx("p",{className:"text-purple-700",children:"Generating your cultural quiz..."})]})}):t.length===0?e.jsx("div",{className:"min-h-screen flex items-center justify-center",children:e.jsxs("div",{className:"text-center p-6 bg-white rounded-lg shadow-md",children:[e.jsx("h2",{className:"text-xl font-bold text-purple-800 mb-4",children:"Quiz Unavailable"}),e.jsx("p",{className:"text-purple-600 mb-4",children:"Could not generate quiz questions."}),e.jsx("button",{onClick:B,className:"bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700",children:"Try Again"})]})}):e.jsx("div",{className:"bg-gradient-to-br from-purple-50 to-indigo-100 min-h-screen flex items-center justify-center p-4 mt-12",children:e.jsx("div",{className:"w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden",children:D?e.jsxs("div",{className:"p-6 md:p-8 text-center",children:[e.jsx("div",{className:"text-5xl mb-4",children:O().icon}),e.jsx("h2",{className:"text-2xl font-bold text-purple-800 mb-4",children:"Quiz Completed!"}),e.jsxs("div",{className:"bg-purple-50 p-4 rounded-lg mb-6 max-w-md mx-auto",children:[e.jsxs("p",{className:"text-xl font-semibold",children:["Score: ",x,"/",t.length]}),e.jsxs("p",{className:"text-lg text-purple-700",children:["(",Math.round(x/t.length*100),"%)"]})]}),e.jsx("h3",{className:"text-xl font-semibold text-purple-700 mb-6",children:O().title}),e.jsxs("button",{onClick:B,className:"bg-purple-600 text-white py-2 px-5 rounded-lg hover:bg-purple-700",children:[e.jsx(Z,{className:"inline mr-2"})," Restart Quiz"]})]}):e.jsxs("div",{className:"relative p-6 md:p-8",children:[e.jsxs("div",{className:"absolute top-4 right-4 flex space-x-4",children:[e.jsxs("div",{className:"flex items-center bg-purple-100 px-3 py-1 rounded-full",children:[e.jsx(W,{className:"mr-2 text-purple-600",size:20}),e.jsxs("span",{className:"text-purple-800 font-semibold",children:[u,"s"]})]}),e.jsxs("div",{className:"flex items-center bg-purple-100 px-3 py-1 rounded-full",children:[e.jsx(H,{className:"mr-2 text-purple-600",size:20}),e.jsx("span",{className:"text-purple-800 font-semibold",children:x})]})]}),e.jsxs("h2",{className:"text-2xl font-bold text-center mb-6 text-purple-900 mt-12",children:[e.jsx(R,{className:"inline mr-2"})," Indian Cultural Quiz"]}),e.jsxs("div",{className:"bg-purple-50 p-5 rounded-2xl mb-6",children:[e.jsx("h3",{className:"text-xl font-semibold text-purple-900 mb-3",children:t[i].question}),e.jsxs("div",{className:"flex flex-wrap gap-2 text-xs text-purple-600",children:[e.jsx("span",{className:"bg-purple-200 px-2 py-1 rounded",children:t[i].difficulty}),e.jsx("span",{className:"bg-purple-200 px-2 py-1 rounded",children:t[i].category}),e.jsx("span",{className:"bg-purple-200 px-2 py-1 rounded",children:t[i].region})]})]}),e.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 gap-3 mb-6",children:t[i].options.map((n,r)=>e.jsx("button",{onClick:()=>L(n),disabled:a!==null,className:`
+                    p-3 rounded-lg transition-all text-left
+                    ${a===n?n===t[i].correctAnswer?"bg-green-500 text-white":"bg-red-500 text-white":"bg-purple-100 hover:bg-purple-200 text-purple-800"}
+                  `,children:n},r))}),$&&!l&&e.jsx("button",{onClick:()=>U(t[i].question),disabled:h,className:"w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 mb-4",children:h?e.jsx("span",{children:"Loading Insight..."}):e.jsx("span",{children:"Get Cultural Insight"})}),J(),a&&e.jsxs("div",{className:"mt-4 p-4 rounded-lg bg-purple-50",children:[e.jsxs("p",{className:"font-medium mb-3",children:[a===t[i].correctAnswer?e.jsx(te,{className:"inline mr-2 text-green-500"}):e.jsx(ne,{className:"inline mr-2 text-red-500"}),t[i].explanation]}),a===t[i].correctAnswer&&T>0&&e.jsxs("p",{className:"text-sm text-green-600 mb-3",children:["⏱️ Time Bonus: +",Math.floor(T/3)]}),e.jsx("button",{onClick:F,className:"w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700",children:i===t.length-1?"Finish Quiz":"Next Question"})]})]})})})};export{me as default};
